@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Scrollbar */
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track { background: transparent; }
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  border: 2px solid transparent;
+}
+
+/* HERO */
+.hero-image {
+  height: 75%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+/* CREDITS */
+.credits-section {
+  height: 19.5%;
+  background: #111;
+  color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* PROJECTS */
+.product-info {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+}
+.product-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 40px auto 0;
+}
+.product-card {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.product-card h3 {
+  margin: 10px 0;
+  color: #333;
+}
+
+/* Accordion content for multiple images */
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  padding-top: 0;
+}
+.card-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.card-item img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-item div {
+  flex: 1;
+}
+.card-item p { margin: 5px 0; }
+
+/* Card colors */
+.card-green { background-color: #e8f5e9; }
+.card-blue { background-color: #e3f2fd; }
+.card-yellow { background-color: #fff9c4; }
+.card-grey { background-color: #f2f2f2; }
+
+</style>
+<title>Projects of Economic Botany (SIE3006)</title>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero-image" id="heroImage">
+  <div class="hero-text">
+    <h1 style="font-size:50px">Course Projects of Economic Botany (SIE3006)</h1>
+    <p>Welcome to our website for the Economic Botany practical project. This site <br>
+       presents a curated collection of practical projects. <br>
+       Each practical will be updated in this website.</p>
+  </div>
+</div>
+
+<!-- CREDITS -->
+<div class="credits-section">
+  <p>Created by: <strong>Danieal Ng & Group Members</strong></p>
+  <p>Course Project: Practical Economic Botany</p>
+  <p>Universiti Malaya</p>
+</div>
+
+<!-- PROJECT INFO -->
+<div class="product-info">
+  <h2 style="text-align:center; margin-top: 40px;">Our Projects</h2>
+
+  <div class="product-cards">
+
+    <!-- Practical 1 -->
+    <div class="product-card card-green">
+      <h3>Practical 1</h3>
+      <div class="card-content">
+        <div class="card-item">
+		<img src="https://i.ibb.co/wZfgjgWQ/s-blob-v1-IMAGE-D5fzkdo0bus.jpg" alt="s-blob-v1-IMAGE-D5fzkdo0bus" style="max-width:100%; height:auto; border:0;">
+          <div>
+            <p><strong>Common Name:</strong> Seaweed/Nori/Laver @ Korean Crispy Seaweed Snack (Spicy)</p>
+            <p><strong>Scientific Name:</strong> <i>Pyropia yezoensis</i></p>
+            <p><strong>Ingredients:</strong> Seaweed (Pyropia yezoensis) 70%,Canola oil, Chili oil 8%
+(Soybean oil, Chili flavor seasoning oil, Spicy falvor seasoning powder 
+KC 5%(spicy flavor seasoning powder, Dextrin, Kimchi flavor powder, 
+monosodium glutamate, Refined salt)</p>
+            <p><strong>Producer:</strong> KWANGCHEONKIM Co.,Ltd</p>
+            <p><strong>Purpose/Benefits:</strong> <br>
+			-Snack Purpose<br>
+			-Low in calories (only 20 kcal per pack)<br>
+			-Contains iodine, vitamins (A, C, and B complex), and minerals like calcium and iron<br>
+			-Contains antioxidants and fiber</p>
+          </div>
+        </div>
+        <div class="card-item">
+          <img src="https://cdn.pixabay.com/photo/2020/06/21/07/08/lichen-5323493_1280.jpg" alt="Image 2">
+          <div>
+            <p><strong>Common Name:</strong> Lichen</p>
+            <p><strong>Scientific Name:</strong> Xanthoria parietina</p>
+            <p><strong>Ingredients:</strong> N/A</p>
+            <p><strong>Producer:</strong> University Lab</p>
+            <p><strong>Purpose/Benefits:</strong> Study symbiosis</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Practical 2 -->
+    <div class="product-card card-grey">
+      <h3>Practical 2</h3>
+      <div class="card-content">
+        <p>New project will be added soon.</p>
+      </div>
+    </div>
+
+    <!-- Placeholder -->
+    <div class="product-card card-grey">
+      <h3>Waiting to be updated</h3>
+      <div class="card-content">
+        <p>New project will be added soon.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+/* Expandable cards */
+const cards = document.querySelectorAll('.product-card');
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const content = card.querySelector('.card-content');
+    if (content.style.maxHeight) {
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+});
+
+/* HERO IMAGE ROTATION */
+const images = [
+  "https://cdn.pixabay.com/photo/2023/08/15/11/47/mushroom-8191823_1280.jpg",
+  "https://cdn.pixabay.com/photo/2020/06/21/07/08/lichen-5323493_1280.jpg",
+  "https://cdn.pixabay.com/photo/2013/04/04/16/06/lichen-100432_1280.jpg"
+];
+
+let index = 0;
+const hero = document.getElementById("heroImage");
+const fadeLayer = document.createElement("div");
+fadeLayer.style.position = "absolute";
+fadeLayer.style.top = 0;
+fadeLayer.style.left = 0;
+fadeLayer.style.width = "100%";
+fadeLayer.style.height = "100%";
+fadeLayer.style.backgroundSize = "cover";
+fadeLayer.style.backgroundPosition = "center";
+fadeLayer.style.backgroundRepeat = "no-repeat";
+fadeLayer.style.opacity = 0;
+fadeLayer.style.transition = "opacity 1.2s ease-in-out";
+fadeLayer.style.zIndex = 1;
+hero.appendChild(fadeLayer);
+
+function changeImage() {
+  const newImage = images[index];
+  fadeLayer.style.backgroundImage =
+    `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newImage}')`;
+  fadeLayer.style.opacity = 1;
+  setTimeout(() => {
+    hero.style.backgroundImage =
+      `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${newImage}')`;
+    fadeLayer.style.opacity = 0;
+  }, 1200);
+  index = (index + 1) % images.length;
+}
+
+changeImage();
+setInterval(changeImage, 5000);
+</script>
+
+</body>
+</html>
