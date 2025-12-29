@@ -2,6 +2,10 @@
 <html>
 <head>
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
 body, html {
   height: 100%;
   margin: 0;
@@ -57,7 +61,7 @@ body::-webkit-scrollbar-thumb {
 /* PROJECTS */
 .product-info {
   padding: 50px 20px;
-  background-color: #f9f9f9;
+  background-color: #f0f0f0;
 }
 .product-cards {
   display: flex;
@@ -111,10 +115,10 @@ body::-webkit-scrollbar-thumb {
 .card-item p { margin: 5px 0; }
 
 /* Card colors */
-.card-green { background-color: #e8f5e9; }
-.card-blue { background-color: #e3f2fd; }
-.card-yellow { background-color: #fff9c4; }
-.card-grey { background-color: #f2f2f2; }
+.card-green  { background-color: #d0f0c0; }   /* pastel green */
+.card-blue   { background-color: #c0e4ff; }   /* pastel blue */
+.card-yellow { background-color: #fff5b7; }   /* pastel yellow */
+.card-grey   { background-color: #e0e0e0; }   /* light grey */
 
 /* Table Styling */
 .card-item table {
@@ -135,6 +139,48 @@ body::-webkit-scrollbar-thumb {
 .card-item table tbody tr:nth-child(even) {
   background-color: #f9f9f9;
 }
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 60px;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  box-sizing: border-box;
+  z-index: 1000;
+}
+
+.nav-left {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.nav-right a {
+  color: #eee;
+  text-decoration: none;
+  margin-left: 20px;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.nav-right a:hover {
+  color: #90caf9;
+}
+
+/* Push content down so navbar doesn't overlap */
+body {
+  padding-top: 60px;
+}
+
 </style>
 <title>Projects of Economic Botany (SIE3006)</title>
 </head>
@@ -142,12 +188,12 @@ body::-webkit-scrollbar-thumb {
 
 <!-- NAVBAR -->
 <div class="navbar">
-  <div class="nav-title">Economic Botany (SIE3006)</div>
-  <div class="nav-links">
-    <a href="#top">Home</a>
+  <div class="nav-left">SIE3006</div>
+  <div class="nav-right">
+    <a href="#heroImage">Home</a>
     <a href="#projects">Projects</a>
-    <a href="#practical1">Practical 1</a>
-    <a href="#practical2">Practical 2</a>
+    <a href="#fieldtrip-card" id="fieldtrip-link">Field Trip</a>
+
   </div>
 </div>
 
@@ -170,7 +216,7 @@ body::-webkit-scrollbar-thumb {
 </div>
 
 <!-- PROJECT INFO -->
-<div class="product-info">
+<div class="product-info" id="projects">
   <h2 style="text-align:center; margin-top: 40px;">Our Projects</h2>
 
   <div class="product-cards">
@@ -391,7 +437,7 @@ enhancer (INS627, INS631)] (5%)</p>
     </div>
 
     <!-- Practical 2 -->
-    <div class="product-card card-grey">
+    <div class="product-card card-blue">
       <h3>Practical 2 (Ferns)</h3>
       <div class="card-content">
 	  <!-- Notification -->
@@ -590,7 +636,7 @@ enhancer (INS627, INS631)] (5%)</p>
     </div>
 
 <!-- Field Trip Report -->
-<div class="product-card card-grey">
+<div class="product-card card-yellow" id="fieldtrip-card">
   <h3>Field Trip Report</h3>
   <div class="card-content">
 
@@ -1368,6 +1414,20 @@ function changeImage() {
 
 changeImage();
 setInterval(changeImage, 5000);
+</script>
+
+<script>
+  document.getElementById('fieldtrip-link').addEventListener('click', function(e) {
+    e.preventDefault(); // prevent default jump
+    const fieldTripCard = document.getElementById('fieldtrip-card');
+    const cardContent = fieldTripCard.querySelector('.card-content');
+    
+    // Expand the card
+    cardContent.style.maxHeight = cardContent.scrollHeight + "px";
+    
+    // Scroll smoothly to it
+    fieldTripCard.scrollIntoView({ behavior: "smooth" });
+  });
 </script>
 
 </body>
